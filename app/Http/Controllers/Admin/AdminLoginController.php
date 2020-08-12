@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Session;
 
 class AdminLoginController extends Controller
 {
@@ -134,6 +135,15 @@ class AdminLoginController extends Controller
         } catch (Exception $exception) {
             return redirect()->back()->withError('something went wrong')->withInput();
         }
+    }
+
+    /**
+     * @return login view and flush session
+     */
+    public function logout()
+    {
+        Session::flush();
+        return redirect()->route('admin.login');
     }
 
     /**

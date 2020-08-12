@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dashboard', 'Admin\DashboardController@dashboardView')->name('admin.dashboard');
-
 Route::get('login', 'Admin\AdminLoginController@login')->name('admin.login');
+
+Route::post('checklogin', 'Admin\AdminLoginController@checkLogin')->name('admin.checklogin');
+
+Route::group(['middleware' => 'admin'], function () {
+
+Route::get('dashboard', 'Admin\DashboardController@dashboardView')->name('admin.dashboard');
 
 Route::get('changeusername','Admin\AdminLoginController@changeUserNameView')->name('admin.changeusernameview');
 
@@ -29,9 +33,7 @@ Route::get('changepassword', 'Admin\AdminLoginController@changePasswordView')->n
 
 Route::post('updatepassword/{admin_id}','Admin\AdminLoginController@updatePassword')->name('admin.updatepassword');
 
-Route::post('checklogin', 'Admin\AdminLoginController@checkLogin')->name('admin.checklogin');
-
-Route::get('test','Admin\AdminLoginController@test');
+Route::get('logout', 'Admin\AdminLoginController@logout')->name('admin.logout');
 
 Route::get('transaction/index', function () {
     return view('transaction/index');
@@ -40,3 +42,8 @@ Route::get('transaction/index', function () {
 Route::get('user/index', function () {
     return view('user/index');
 });
+
+});
+
+Route::get('test','Admin\AdminLoginController@test');
+
