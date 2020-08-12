@@ -17,13 +17,14 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
+Route::get('dashboard', 'Admin\DashboardController@dashboardView')->name('admin.dashboard');
 
-Route::get('login', function () {
-    return view('login');
-});
+Route::get('login', 'Admin\AdminLoginController@login')->name("admin.login");
+
+Route::get('changeusername','Admin\AdminLoginController@changeUserNameView')->name('admin.changeusernameview');
+
+Route::get('changepassword', 'Admin\AdminLoginController@changePasswordView')->name("admin.changepasswordview");
+
 
 Route::get('transaction/index', function () {
     return view('transaction/index');
