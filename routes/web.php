@@ -33,3 +33,24 @@ Route::get('user/index', function () {
     return view('user/index');
 });
 
+Route::get('changepassword', function () {
+    return view('changepassword');
+});
+
+Route::get('changeusername', function () {
+    return view('changeusername');
+});
+
+/**country routes */
+
+Route::get('country/index', function () {
+    return view('country/index');
+});
+
+Route::get('country/add', function () {
+    return view('country/add');
+});
+
+Route::get('country/edit', function () {
+    return view('country/edit');
+});
