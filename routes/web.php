@@ -14,17 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 Route::get('dashboard', 'Admin\DashboardController@dashboardView')->name('admin.dashboard');
 
-Route::get('login', 'Admin\AdminLoginController@login')->name("admin.login");
+Route::get('login', 'Admin\AdminLoginController@login')->name('admin.login');
 
 Route::get('changeusername','Admin\AdminLoginController@changeUserNameView')->name('admin.changeusernameview');
 
-Route::get('changepassword', 'Admin\AdminLoginController@changePasswordView')->name("admin.changepasswordview");
+Route::post('updateusername/{admin_id}','Admin\AdminLoginController@updateUserName')->name('admin.updateusername');
 
+Route::get('changepassword', 'Admin\AdminLoginController@changePasswordView')->name('admin.changepasswordview');
+
+Route::post('updatepassword/{admin_id}','Admin\AdminLoginController@updatePassword')->name('admin.updatepassword');
+
+Route::post('checklogin', 'Admin\AdminLoginController@checkLogin')->name('admin.checklogin');
+
+Route::get('test','Admin\AdminLoginController@test');
 
 Route::get('transaction/index', function () {
     return view('transaction/index');

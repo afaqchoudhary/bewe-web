@@ -24,18 +24,23 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form method="POST" action="#" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.updateusername',encrypt($admin->id)) }}" enctype="multipart/form-data">
                     <div class="box-body">
                         @csrf
                         @if (session('error'))
                         <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
                         @endif
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
                                     <label>User Name</label>
                                     <input type="text" class="form-control" name="user_name"
-                                        value="{{ old('user_name') }}" placeholder="enter user name">
+                                        value="{{ old('user_name', $admin->user_name) }}" placeholder="enter user name">
                                     @if ($errors->has('user_name'))
                                     <div class="danger">{{ $errors->first('user_name') }}</div>
                                     @endif
@@ -43,12 +48,8 @@
                             </div>
                         </div>
 
-                        
-
-   
-
                         <div class="box-footer text-center">
-                            <button type="button" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">
                                Update
                             </button>
                         </div>

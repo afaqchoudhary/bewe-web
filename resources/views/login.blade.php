@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="{{URL('dashboard')}}" method="GET">
+    <form action="{{route('admin.checklogin')}}" method="POST">
       @csrf
       @if (session('error'))
       <div class="alert alert-danger">{{ session('error') }}</div>
