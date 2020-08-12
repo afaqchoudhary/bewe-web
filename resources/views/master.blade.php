@@ -131,9 +131,9 @@
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini"><b>BE</b>WE</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>Bewe</b>Wallet</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -162,12 +162,12 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class=""><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                    <li class=""><a href="{{route('admin.countryindex')}}"><i class="fa fa-dashboard"></i>Country</a></li>
-                    <li class=""><a href="{{URL('user/index')}}"><i class="fa fa-user"></i>User</a></li>
-                    <li class=""><a href="{{URL('transaction/index')}}"><i class="fa fa-money"></i>Transactions</a></li>
-                    <li class=""><a href="{{route('admin.changeusernameview')}}"><i class="fa fa-user"></i>Change UserName</a></li>                    
-                    <li class=""><a href="{{route('admin.changepasswordview')}}"><i class="fa fa-user"></i>Change Password</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'admin.dashboard') ? 'active' : '' }}"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'admin.countryindex') ? 'active' : '' }}"><a href="{{route('admin.countryindex')}}"><i class="fa fa-life-saver"></i>Country</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'admin.userindex') ? 'active' : '' }}"><a href="{{route('admin.userindex')}}"><i class="fa fa-user"></i>User</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'admin.transactionindex') ? 'active' : '' }}"><a href="{{route('admin.transactionindex')}}"><i class="fa fa-get-pocket"></i>Transactions</a></li>
+                    <li class="{{ (Route::currentRouteName() == 'admin.changeusernameview') ? 'active' : '' }}"><a href="{{route('admin.changeusernameview')}}"><i class="fa fa-user"></i>Change UserName</a></li>                    
+                    <li class="{{ (Route::currentRouteName() == 'admin.changepasswordview') ? 'active' : '' }}"><a href="{{route('admin.changepasswordview')}}"><i class="fa fa-key"></i>Change Password</a></li>
                     <li class=""><a href="{{route('admin.logout')}}"><i class="fa fa-power-off"></i>Logout</a></li>
                 </ul>
             </section>
@@ -183,9 +183,9 @@
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> 2.4.0
+                <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2017-2020 <a href="#">BeWe</a>.</strong> All rights
+            <strong>Copyright &copy; 2020 <a href="#">BeWe</a>.</strong> All rights
             reserved.
         </footer>
 

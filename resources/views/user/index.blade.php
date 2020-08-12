@@ -17,7 +17,7 @@
     <div class="row">
         <!-- left column -->
         <div class="col-md-12">
-            <div class="box box-primary">
+            {{-- <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Search</h3>
                 </div>
@@ -69,7 +69,7 @@
                 <button type="submit" class="btn btn-primary">Search</button>
             </div>
             </form>
-            </div>
+            </div> --}}
             <!-- /.box-body -->
 
           
@@ -84,7 +84,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="container-fluid">
-
+                            @if ($users->count() > 0)
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -92,34 +92,41 @@
                                         <th class="text-center">Contact Number</th>
                                         <th class="text-center">Email</th>
                                         <th class="text-center">Country</th>
-                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Signup Type</th>
+                                        <th class="text-center">Device Type</th>
+                                        {{-- <th class="text-center">Status</th> --}}
                                         <th class="text-center">Created At</th>
-                                        <th class="text-center">Updated At</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    @foreach ($users as $user)
                                     <tr>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">
+                                        <td class="text-center">{{ $user->name }}</td>
+                                        <td class="text-center">{{ $user->contact_no }}</td>
+                                        <td class="text-center">{{ $user->email }}</td>
+                                        <td class="text-center">{{ $user->country_name }}</td>
+                                        {{-- <td class="text-center">
                                             <label class="switch">
                                                 <input data-id="restaurant_id" class="is-user-blocked" type="checkbox"
                                                     data-onstyle="success" data-offstyle="danger" data-toggle="toggle"
                                                     data-on="Active" data-off="InActive">
                                                 <span class="slider round"></span>
                                                 </br>
-                                            </label></td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center"></td>
+                                            </label></td> --}}
+                                            <td class="text-center">{{ $user->signup_type }}</td>
+                                            <td class="text-center">{{ $user->device_type }}</td>
+                                            <td class="text-center">{{ $user->created_at }}</td>
 
                                     </tr>
-
+                                    @endforeach
                                 </tbody>
-
-
                             </table>
+                            @else
+                            <div class="text-center">
+                                <h2>No user found</h2>
+                            </div>
+                            @endif
+                            
                         </div>
 
 

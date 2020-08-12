@@ -50,11 +50,9 @@ Route::get('logout', 'Admin\AdminLoginController@logout')->name('admin.logout');
 
 Route::get('transaction/index', function () {
     return view('transaction/index');
-});
+})->name('admin.transactionindex');
 
-Route::get('user/index', function () {
-    return view('user/index');
-});
+Route::get('user/index', 'Admin\UserController@index')->name('admin.userindex');
 
 });
 

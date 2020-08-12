@@ -29,9 +29,9 @@
                             <label>Transaction ID</label>
 
                              <input type="text" class="form-control" id="exampleInputEmail1"
-                                        name="restaurant_name" placeholder="enter transaction id">
-                            @if ($errors->has('user_type'))
-                            <div class="danger">{{ $errors->first('user_type') }}</div>
+                                        name="transaction_id" placeholder="enter transaction id">
+                            @if ($errors->has('transaction_id'))
+                            <div class="danger">{{ $errors->first('transaction_id') }}</div>
                             @endif
                         </div>
                     </div>
@@ -41,9 +41,9 @@
                             <label>Paid Via</label>
 
                             <input type="text" class="form-control" id="exampleInputEmail1"
-                                        name="restaurant_name" placeholder="enter payment method">
-                            @if ($errors->has('user_block'))
-                            <div class="danger">{{ $errors->first('user_block') }}</div>
+                                        name="payment_method" placeholder="enter payment method">
+                            @if ($errors->has('payment_method'))
+                            <div class="danger">{{ $errors->first('payment_method') }}</div>
                             @endif
                         </div>
                     </div>
@@ -52,10 +52,10 @@
                         <div class="form-group">
                             <label>Sender's Name</label>
 
-                            < <input type="text" class="form-control" id="exampleInputEmail1"
-                                        name="restaurant_name" placeholder="enter sender's name">
-                            @if ($errors->has('user_profile'))
-                            <div class="danger">{{ $errors->first('user_profile') }}</div>
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                        name="sender_name" placeholder="enter sender's name">
+                            @if ($errors->has('sender_name'))
+                            <div class="danger">{{ $errors->first('sender_name') }}</div>
                             @endif
                         </div>
                     </div>
@@ -79,8 +79,10 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="container-fluid">
-
-                            <table class="table table-striped">
+                            <div class="text-center">
+                                <h2>No transaction found</h2>
+                            </div>
+                            {{-- <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Transaction ID</th>
@@ -94,6 +96,7 @@
                                 </thead>
                                 <tbody>
 
+                                    
                                     <tr>
                                         <td class="text-center"> </td>
                                         <td class="text-center"></td>
@@ -107,7 +110,7 @@
                                 </tbody>
 
 
-                            </table>
+                            </table> --}}
                         </div>
 
 
