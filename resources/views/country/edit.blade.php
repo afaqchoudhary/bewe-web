@@ -23,7 +23,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form method="GET" action="{{URL('country/index')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('admin.updatecountry', $country->id)}}" >
 
                     <div class="box-body">
                         @csrf
@@ -35,14 +35,14 @@
                             <div class="form-group">
                                 <label>Country Name</label>
                                 <input type="text" class="form-control" name="country_name"
-                                    value="{{ old('country_name') }}" placeholder="enter country name">
+                                    value="{{ old('country_name', $country->country_name) }}" placeholder="enter country name">
                                 @if ($errors->has('country_name'))
                                 <div class="danger">{{ $errors->first('country_name') }}</div>
                                 @endif
 
                             </div>
                         </div>
-
+                        {{-- 
                         <div class="col-md-4 col-md-offset-4">
                             <div class="form-group">
                                 <label>Country Code</label>
@@ -53,9 +53,7 @@
                                 @endif
 
                             </div>
-                        </div>
-
-                         <!-- /.modal -->
+                        </div> --}}
           
                     </div>
                     <div class="box-footer text-center">

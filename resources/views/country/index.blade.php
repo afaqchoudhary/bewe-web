@@ -27,13 +27,13 @@
                     <div class="box-header">
                         <h3 class="box-title">Country List</h3>
 
-                        <a href="{{URL('country/add')}}" class="btn btn-primary pull-right">
+                        <a href="{{route('admin.createcountry')}}" class="btn btn-primary pull-right">
                             <i class="fa fa-plus"> Add Country</i>
                         </a>
                     </div>
                     <!-- /.box-header -->
                     <div class="container-fluid">
-                        
+                        @if ($countries->count() > 0)
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -42,20 +42,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @foreach ($countries as $country)
                                 <tr>
-                                    <td class="text-center"></td>
+                                    <td class="text-center">{{ $country->country_name }}</td>
                                 
 
                                     <td class="text-center">
-                                        <a href="{{URL('country/edit')}}" class="btn btn-primary">
+                                        <a href="{{route('admin.editcountry', $country->id)}}" class="btn btn-primary">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
+                                        <a class="btn btn-primary" data-toggle="modal" data-target="#modal-default{{ $country->id }}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </a>
                                     </td>
-                                    <div class="modal fade" id="modal-default">
+                                    <div class="modal fade" id="modal-default{{ $country->id }}">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -68,12 +68,12 @@
                                                     </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Do you want to delete this country?</p>
+                                                    <p>Do you want to delete this country? All data related to this country will be deleted.</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default pull-left"
                                                         data-dismiss="modal">No</button>
-                                                    <a href="#" type="submit" class="btn btn-primary">
+                                                    <a href="{{ route('admin.deletecountry',$country->id) }}" type="submit" class="btn btn-primary">
                                                         Yes</a>
                                                 </div>
                                             </div>
@@ -83,12 +83,16 @@
                                     </div>
                                     <!-- /.modal -->
                                 </tr>
-                                
+                                @endforeach
                             </tbody>
 
 
                         </table>
-                        
+                        @else
+                        <div class="text-center">
+                            <h2>No data found</h2>
+                        </div>
+                        @endif
                     </div>
 
 

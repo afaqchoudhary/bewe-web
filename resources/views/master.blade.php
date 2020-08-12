@@ -163,6 +163,7 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class=""><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                    <li class=""><a href="{{route('admin.countryindex')}}"><i class="fa fa-dashboard"></i>Country</a></li>
                     <li class=""><a href="{{URL('user/index')}}"><i class="fa fa-user"></i>User</a></li>
                     <li class=""><a href="{{URL('transaction/index')}}"><i class="fa fa-money"></i>Transactions</a></li>
                     <li class=""><a href="{{route('admin.changeusernameview')}}"><i class="fa fa-user"></i>Change UserName</a></li>                    

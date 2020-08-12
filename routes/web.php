@@ -33,6 +33,19 @@ Route::get('changepassword', 'Admin\AdminLoginController@changePasswordView')->n
 
 Route::post('updatepassword/{admin_id}','Admin\AdminLoginController@updatePassword')->name('admin.updatepassword');
 
+
+Route::get('country/index', 'Admin\CountryController@index')->name('admin.countryindex');
+
+Route::get('country/add', 'Admin\CountryController@create')->name('admin.createcountry');
+
+Route::post('country/store','Admin\CountryController@store')->name('admin.storecountry');
+
+Route::get('country/edit/{country_id}', 'Admin\CountryController@edit')->name('admin.editcountry');
+
+Route::post('country/update/{country_id}', 'Admin\CountryController@update')->name('admin.updatecountry');
+
+Route::get('country/delete/{country_id}', 'Admin\CountryController@destroy')->name('admin.deletecountry');
+
 Route::get('logout', 'Admin\AdminLoginController@logout')->name('admin.logout');
 
 Route::get('transaction/index', function () {

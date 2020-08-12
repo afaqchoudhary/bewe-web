@@ -23,7 +23,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form method="GET" action="{{URL('country/index')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('admin.storecountry')}}" enctype="multipart/form-data">
 
                     <div class="box-body">
                         @csrf
