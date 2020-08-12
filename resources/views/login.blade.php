@@ -42,17 +42,17 @@
       <div class="alert alert-danger">{{ session('error') }}</div>
       @endif
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="admin_email" placeholder="enter admin email">
-        <span class="glyphicon glyphicon-home form-control-feedback"></span>
-        @if ($errors->has('admin_email'))
-        <div class="danger">{{ $errors->first('admin_email') }}</div>
+        <input type="text" class="form-control" name="user_name" placeholder="enter user name">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        @if ($errors->has('user_name'))
+        <div class="danger">{{ $errors->first('user_name') }}</div>
         @endif
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="admin_password" placeholder="Password">
+        <input type="password" class="form-control" name="password" placeholder="enter password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        @if ($errors->has('admin_password'))
-        <div class="danger">{{ $errors->first('admin_password') }}</div>
+        @if ($errors->has('password'))
+        <div class="danger">{{ $errors->first('password') }}</div>
         @endif
       </div>
       <div class="row">

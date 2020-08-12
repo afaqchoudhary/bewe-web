@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('dashboard', function () {
@@ -32,4 +32,3 @@ Route::get('transaction/index', function () {
 Route::get('user/index', function () {
     return view('user/index');
 });
-
