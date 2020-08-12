@@ -100,7 +100,6 @@
                                 <tbody>
 
                                     <tr>
-                                        <td class="text-center"> </td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
